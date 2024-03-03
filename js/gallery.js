@@ -101,4 +101,11 @@ function handleModalOpen(event) {
   instance.show();
   const modalElement = document.querySelector('.modal');
   modalElement.addEventListener('click', instance.close);
+  modalElement.addEventListener('keydown', handleKeyDown);
+  function handleKeyDown(e) {
+    if (e.code === 'Escape') {
+      instance.close();
+    }
+  }
+  console.log(handleKeyDown);
 }
